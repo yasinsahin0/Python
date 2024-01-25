@@ -1,19 +1,16 @@
 import socket
 
-
-
 BUFF_SIZE = 512 # Byte
+
+print("Server Dosyası çalışıtırıldı.")
 
 server_socket = socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
 
 server_socket.setsockopt(socket.SOL_SOCKET,socket.SO_RCVBUF,BUFF_SIZE)
 
-host_name = socket.gethostname()
-
 socket_address = ('localhost',9998)
 
 server_socket.bind(socket_address)
-
 
 msg,client_addr = server_socket.recvfrom(BUFF_SIZE)
 

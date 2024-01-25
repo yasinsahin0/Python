@@ -1,13 +1,13 @@
 import socket   
-from datetime import datetime
 
 BUFF_SIZE = 512 # Byte
 
+print("Client Dosyası çalışıtırıldı.")
 """
 socket.socket(AdreslemeSekli,İletisimTipi)
 
-AF_INET : 192.0.2.235
-AF_INET6 : 2001:DB8:ABCD:12::
+AF_INET : 192.0.2.235  ipv4
+AF_INET6 : 2001:DB8:ABCD:12::   ipv6
 AF_UNIX : UNİX İpleri için kullanılıyor.
 
 SOCK_DGRAM : UDP
@@ -26,9 +26,10 @@ IPPROTO_ICMPV6 : İstek ICMPv6 protokol katmanı için geçerlidir.
 
 SO_RCVBUF : Alma arabelleğinin boyutunu ayarla.
 """
+
 client_socket.setsockopt(socket.SOL_SOCKET,socket.SO_RCVBUF,BUFF_SIZE)
 
-host_ip = 'localhost'
+host_ip = 'localhost' # 127.0.0.1
 port = 9998
 message = b'clientten geldim'
 
